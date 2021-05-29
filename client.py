@@ -77,7 +77,7 @@ class Settings():
                 self.minimum_position = shelf["minimum_position"]
                 self.maximum_position = shelf["maximum_position"]
                 self.speed = shelf["speed"]
-        except (KeyError,NameError):
+        except Exception:
                 self.minimum_position = self.default_minimum_position
                 self.maximum_position = self.default_maximum_position
                 self.speed = self.default_speed
