@@ -41,7 +41,7 @@ class Version_Control():
 
 class Roboteq:
     BOARDS = {
-        "board-1":{
+        "board1":{
             "mcu_id":"300:1058:2031663:1429493506:540422710",
             "serial_data_watchdog":0, #miliseconds
             "serial_echo":0, #0 = enabled, 1 is disabled

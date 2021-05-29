@@ -46,7 +46,7 @@ class Main(threading.Thread):
             roboteq_data_receiver.add_to_queue, 
             self.status_receiver, 
             self.network_status_change_handler, 
-            {"sliders":settings.Roboteq.BOARDS["sliders"]},
+            {"board1":settings.Roboteq.BOARDS["board1"]},
             {
                 "pitch_slider":settings.Roboteq.MOTORS["pitch_slider"],
             }
