@@ -1,5 +1,3 @@
-import commands
-import math
 import os
 import queue
 import threading
@@ -8,8 +6,6 @@ import serial
 import shelve
 import socket
 import sys
-import random
-import traceback
 import zmq
 
 
