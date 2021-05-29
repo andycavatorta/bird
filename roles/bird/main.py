@@ -90,13 +90,3 @@ class Main(threading.Thread):
                 print(e, repr(traceback.format_exception(exc_type, exc_value,exc_traceback)))
 
 main = Main()
-
-"""
-controllers.macros["pitch_slider"].add_to_queue("go_to_limit_switch")
-controllers.macros["pitch_slider"].add_to_queue("go_to_absolute_position", {"position":200000, "speed":400})
-controllers.macros["pitch_slider"].add_to_queue("coast")
-
-controllers.macros["bow_position_slider"].add_to_queue("go_to_limit_switch")
-controllers.macros["bow_position_slider"].add_to_queue("go_to_absolute_position", {"position":200000, "speed":400})
-controllers.macros["bow_position_slider"].add_to_queue("coast")
-"""
