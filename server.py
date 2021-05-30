@@ -147,7 +147,7 @@ class Receive_Commands_And_Settings(threading.Thread):
                 range_of_positions = settings.get_maximum_position() - settings.get_minimum_position()
                 position_increment_size = int(range_of_positions / 255.0)
                 destination_position = (value * position_increment_size) + settings.get_minimum_position()
-                serial_command = "!PR {} {}".format(1, destination_position)
+                serial_command = "!P {} {}".format(1, destination_position)
                 motor.add_to_queue(serial_command)
 
             self.socket.send(b"received")
