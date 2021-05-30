@@ -123,9 +123,9 @@ class Receive_Commands_And_Settings(threading.Thread):
 
     def run(self):
         while True:
-            action_value_json = self.socket.recv()
-            print(action_value_json)
-            action, value = json.loads(action_value_json)
+            action, value = self.socket.recv_json()
+            #print(action_value_json)
+            #action, value = json.loads(action_value_json)
             print("Received request: %s" % action, value)
             if action == b"set_minimum_position":
                 settings.set_minimum_position(int(value))
