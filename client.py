@@ -122,7 +122,7 @@ class Receive_Commands_And_Settings(threading.Thread):
 
     def run(self):
         while True:
-            action, value = socket.recv()
+            action, value = socket.recv_json()
             print("Received request: %s" % action, value)
             if action == b"set_minimum_position":
                 settings.set_minimum_position(int(value))
