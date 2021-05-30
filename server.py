@@ -133,9 +133,13 @@ class Receive_Commands_And_Settings(threading.Thread):
             print("Received request: %s" % action, value)
             if action == "set_minimum_position":
                 settings.set_minimum_position(int(value))
+                serial_command = "!P {} {}".format(1, int(value))
+                motor.add_to_queue(serial_command)
 
             if action == "set_maximum_position":
                 settings.set_maximum_position(int(value))
+                serial_command = "!P {} {}".format(1, int(value))
+                motor.add_to_queue(serial_command)
 
             if action == "set_speed":
                 settings.set_speed(int(value))
