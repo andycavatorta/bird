@@ -145,3 +145,4 @@ class Receive_Commands_And_Settings(threading.Thread):
 
             socket.send(b"received")
 
+receive_commands_and_settings = Receive_Commands_And_Settings()
