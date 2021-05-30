@@ -92,13 +92,13 @@ class Settings():
                     shelf['speed'] = self.default_speed
 
     def get_minimum_position(self):
-        return shelf["minimum_position"]
+        return self.minimum_position
 
     def get_maximum_position(self):
-        return shelf["maximum_position"]
+        return self.maximum_position
 
     def get_speed(self):
-        return shelf["speed"]
+        return self.speed
 
     def set_minimum_position(self, minimum_position):
         self.minimum_position = minimum_position
@@ -131,13 +131,13 @@ class Receive_Commands_And_Settings(threading.Thread):
             #print(action_value_json)
             #action, value = json.loads(action_value_json)
             print("Received request: %s" % action, value)
-            if action == b"set_minimum_position":
+            if action == "set_minimum_position":
                 settings.set_minimum_position(int(value))
 
-            if action == b"set_maximum_position":
+            if action == "set_maximum_position":
                 settings.set_maximum_position(int(value))
 
-            if action == b"set_speed":
+            if action == "set_speed":
                 settings.set_speed(int(value))
                 speed = value # assume for now that motor control speed range is 0-255 and input range is 0-255
                 serial_command = "!S {} {}".format(1, speed)
