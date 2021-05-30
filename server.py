@@ -30,8 +30,6 @@ class Motor(threading.Thread):
             serial_command, 
             event=None,
             callback=None):
-        if event is not None:
-            event.clear()
         self.queue.put((serial_command, event, callback))
 
     def _readSerial_(self):
