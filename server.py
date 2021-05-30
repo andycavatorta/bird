@@ -117,13 +117,13 @@ class Receive_Commands_And_Settings(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
         context = zmq.Context()
-        socket = context.socket(zmq.REP)
-        socket.bind("tcp://*:5555")
+        self.socket = context.socket(zmq.REP)
+        self.socket.bind("tcp://*:5555")
         self.start()
 
     def run(self):
         while True:
-            action_value_json = socket.recv()
+            action_value_json = self.socket.recv()
             print(action_value_json)
             action, value = json.loads(action_value_json)
             print("Received request: %s" % action, value)
@@ -146,6 +146,6 @@ class Receive_Commands_And_Settings(threading.Thread):
                 serial_command = "!PR {} {}".format(1, destination_position)
                 motor.add_to_queue(serial_command)
 
-            socket.send(b"received")
+            self.socket.send(b"received")
 
 receive_commands_and_settings = Receive_Commands_And_Settings()
