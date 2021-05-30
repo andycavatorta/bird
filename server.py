@@ -143,7 +143,7 @@ class Receive_Commands_And_Settings(threading.Thread):
                 serial_command = "!S {} {}".format(1, speed)
                 motor.add_to_queue(serial_command)
 
-            if action == b"set_position":
+            if action == "set_position":
                 range_of_positions = settings.get_maximum_position() - settings.get_minimum_position()
                 position_increment_size = int(range_of_positions / 255.0)
                 destination_position = (value * position_increment_size) + settings.get_minimum_position()
