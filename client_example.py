@@ -1,3 +1,4 @@
+import json
 import zmq
 
 context = zmq.Context()
@@ -8,5 +9,6 @@ socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 
 def send_to_server(action, value):
-    socket.send_json([action, value])
+    action_value_json = json.dumps([action, value])
+    socket.send(action_value_json)
     print(socket.recv())

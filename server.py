@@ -1,3 +1,4 @@
+import json
 import os
 import queue
 import threading
@@ -122,7 +123,9 @@ class Receive_Commands_And_Settings(threading.Thread):
 
     def run(self):
         while True:
-            action, value = socket.recv_json()
+            action_value_json = socket.recv()
+            print(action_value_json)
+            action, value = json.loads(action_value_json)
             print("Received request: %s" % action, value)
             if action == b"set_minimum_position":
                 settings.set_minimum_position(int(value))
