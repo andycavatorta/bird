@@ -30,7 +30,9 @@ class Motor(threading.Thread):
             serial_command, 
             event=None,
             callback=None):
+        print(100)
         self.queue.put((serial_command, event, callback))
+        print(101)
 
     def _readSerial_(self):
         resp_char = " "
@@ -44,9 +46,13 @@ class Motor(threading.Thread):
 
     def run(self):
         while True:
+            print(102)
             serial_command, event, callback = self.queue.get(block=True, timeout=None)
+            print(103)
             self.serial.write(str.encode(serial_command +'\r'))
+            print(104)
             resp = self._readSerial_()
+            print(105)
             print(">>1",serial_command, resp)
             if len(resp)==1:
                 if resp[0]=="+":
