@@ -72,61 +72,61 @@ motor = Motor()
 
 while True:
     time.sleep(1)
-    serial_command = "!P 1 1000"
+    serial_command = "!P 1 -1000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 43000"
+    serial_command = "!P 1 -43000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 20000"
+    serial_command = "!P 1 -20000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 43000"
+    serial_command = "!P 1 -43000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 1000"
+    serial_command = "!P 1 -1000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 20000"
+    serial_command = "!P 1 -20000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 1000"
+    serial_command = "!P 1 -1000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 43000"
+    serial_command = "!P 1 -43000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 20000"
+    serial_command = "!P 1 -20000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 43000"
+    serial_command = "!P 1 -43000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 1000"
+    serial_command = "!P 1 -1000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 20000"
+    serial_command = "!P 1 -20000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 1000"
+    serial_command = "!P 1 -1000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 43000"
+    serial_command = "!P 1 -43000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 20000"
+    serial_command = "!P 1 -20000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 43000"
+    serial_command = "!P 1 -43000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 1000"
+    serial_command = "!P 1 -1000"
     motor.add_to_queue(serial_command)
     time.sleep(6)
-    serial_command = "!P 1 20000"
+    serial_command = "!P 1 -20000"
     motor.add_to_queue(serial_command)
     time.sleep(10)
-    serial_command = "!P 1 0"
+    serial_command = "!P 1 -0"
     motor.add_to_queue(serial_command)
     time.sleep(170)
     print("10")
