@@ -143,7 +143,7 @@ class Receive_Commands_And_Settings(threading.Thread):
 
             if action == "set_speed":
                 settings.set_speed(int(value))
-                speed = value # assume for now that motor control speed range is 0-255 and input range is 0-255
+                speed = value * 2 # assume for now that motor control speed range is 0-255 and input range is 0-255
                 serial_command = "!S {} {}".format(1, speed)
                 motor.add_to_queue(serial_command)
 
