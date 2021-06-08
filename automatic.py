@@ -71,6 +71,9 @@ class Motor(threading.Thread):
 motor = Motor()
 
 while True:
+    serial_command = "!MG"
+    motor.add_to_queue(serial_command)
+
     time.sleep(1)
     serial_command = "!P 1 -1000"
     motor.add_to_queue(serial_command)
@@ -151,8 +154,5 @@ while True:
     print("2")
     time.sleep(1)
     print("1")
-
-    serial_command = "!MG"
-    motor.add_to_queue(serial_command)
 
 
