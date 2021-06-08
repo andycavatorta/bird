@@ -128,6 +128,7 @@ while True:
     time.sleep(6)
     serial_command = "!P 1 -0"
     motor.add_to_queue(serial_command)
+    print("starting rest period")
     time.sleep(170)
     print("10")
     time.sleep(1)
